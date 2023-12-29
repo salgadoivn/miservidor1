@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces" xmlns:s0="urn:GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="urn:GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces">
+            <xsd:element name="Creacion" type="s0:InputMapping1"/>
+            <xsd:complexType name="InputMapping1">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Categorization_Tier_1" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Service_Categorization_Tier_2" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Impact" nillable="true" type="s0:ImpactType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Urgency" nillable="true" type="s0:UrgencyType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Service_Type" nillable="true" type="s0:Service_TypeType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Detailed_Decription" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Description" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="Status_inc" nillable="true" type="s0:Status_incType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Status_Reason" nillable="true" type="s0:Status_ReasonType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Reported_Source" nillable="true" type="s0:Reported_SourceType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="First_Name" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Last_Name" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Assigned_Group" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Assigned_Support_Organization" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Assigned_Support_Company" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="zEconomico" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="zEnlace" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Valida_CAE" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="WebService" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="URL" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="IP_Ping" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="BD_Instancia" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="BD_Monitoreo" nillable="false" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:simpleType name="ImpactType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="1-Extensive/Widespread"/>
+                    <xsd:enumeration value="2-Significant/Large"/>
+                    <xsd:enumeration value="3-Moderate/Limited"/>
+                    <xsd:enumeration value="4-Minor/Localized"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="UrgencyType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="1-Critical"/>
+                    <xsd:enumeration value="2-High"/>
+                    <xsd:enumeration value="3-Medium"/>
+                    <xsd:enumeration value="4-Low"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Service_TypeType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="User Service Restoration"/>
+                    <xsd:enumeration value="User Service Request"/>
+                    <xsd:enumeration value="Infrastructure Restoration"/>
+                    <xsd:enumeration value="Infrastructure Event"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Status_incType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="New"/>
+                    <xsd:enumeration value="Assigned"/>
+                    <xsd:enumeration value="In Progress"/>
+                    <xsd:enumeration value="Pending"/>
+                    <xsd:enumeration value="Resolved"/>
+                    <xsd:enumeration value="Closed"/>
+                    <xsd:enumeration value="Cancelled"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Status_ReasonType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Infrastructure Change Created"/>
+                    <xsd:enumeration value="Local Site Action Required"/>
+                    <xsd:enumeration value="Purchase Order Approval"/>
+                    <xsd:enumeration value="Registration Approval"/>
+                    <xsd:enumeration value="Supplier Delivery"/>
+                    <xsd:enumeration value="Support Contact Hold"/>
+                    <xsd:enumeration value="Third Party Vendor Action Reqd"/>
+                    <xsd:enumeration value="Client Action Required"/>
+                    <xsd:enumeration value="Infrastructure Change"/>
+                    <xsd:enumeration value="Request"/>
+                    <xsd:enumeration value="Future Enhancement"/>
+                    <xsd:enumeration value="Pending Original Incident"/>
+                    <xsd:enumeration value="Client Hold"/>
+                    <xsd:enumeration value="Monitoring Incident"/>
+                    <xsd:enumeration value="Customer Follow-Up Required"/>
+                    <xsd:enumeration value="Temporary Corrective Action"/>
+                    <xsd:enumeration value="No Further Action Required"/>
+                    <xsd:enumeration value="Resolved by Original Incident"/>
+                    <xsd:enumeration value="Automated Resolution Reported"/>
+                    <xsd:enumeration value="No longer a Causal CI"/>
+                    <xsd:enumeration value="Pending Causal Incident Resolution"/>
+                    <xsd:enumeration value="Resolved by Causal Incident"/>
+                    <xsd:enumeration value="Abierto"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Reported_SourceType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Direct Input"/>
+                    <xsd:enumeration value="Email"/>
+                    <xsd:enumeration value="External Escalation"/>
+                    <xsd:enumeration value="Fax"/>
+                    <xsd:enumeration value="Self Service"/>
+                    <xsd:enumeration value="Systems Management"/>
+                    <xsd:enumeration value="Phone"/>
+                    <xsd:enumeration value="Voice Mail"/>
+                    <xsd:enumeration value="Walk In"/>
+                    <xsd:enumeration value="Web"/>
+                    <xsd:enumeration value="Other"/>
+                    <xsd:enumeration value="BMC Impact Manager Event"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:element name="CreacionResponse" type="s0:OutputMapping1"/>
+            <xsd:complexType name="OutputMapping1">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="Request_ID__c" nillable="false" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="Return_INC_ID" nillable="false" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="AuthenticationInfo" type="s0:AuthenticationInfo"/>
+            <xsd:complexType name="AuthenticationInfo">
+                <xsd:sequence>
+                    <xsd:element name="userName" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="authentication" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="locale" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="timeZone" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ARAuthenticate">
+        <wsdl:part element="s0:AuthenticationInfo" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="CreacionSoapOut">
+        <wsdl:part element="s0:CreacionResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="CreacionSoapIn">
+        <wsdl:part element="s0:Creacion" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="CreacionPortType">
+        <wsdl:operation name="Creacion">
+            <wsdl:input message="s0:CreacionSoapIn">
+            </wsdl:input>
+            <wsdl:output message="s0:CreacionSoapOut">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CreacionSoapBinding" type="s0:CreacionPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Creacion">
+            <soap:operation soapAction="urn:GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces/Creacion" style="document"/>
+            <wsdl:input>
+                <soap:header message="s0:ARAuthenticate" part="parameters" use="literal">
+                </soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="GOIT:HPD_FormTemporal_MonitoreoWS_EnlacesService">
+        <wsdl:port binding="s0:CreacionSoapBinding" name="CreacionSoap">
+            <soap:address location="https://10.237.164.150/middleware/mdw/arsys/services/ARService?server=appitremedy&amp;webService=GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
