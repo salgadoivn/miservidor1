@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:HPD_IncidentInterface_Create_WSMonitoreo" xmlns:s0="urn:HPD_IncidentInterface_Create_WSMonitoreo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <xsd:schema elementFormDefault="qualified" targetNamespace="urn:HPD_IncidentInterface_Create_WSMonitoreo">
+   <xsd:element name="HelpDesk_Submit_Service" type="s0:CreateInputMap"/>
+   <xsd:complexType name="CreateInputMap">
+    <xsd:sequence>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Categorization_Tier_1" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Categorization_Tier_2" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="ServiceType" nillable="true" type="s0:ServiceTypeType"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Impact" nillable="true" type="s0:ImpactType"/>
+     <xsd:element maxOccurs="1" minOccurs="1" name="Urgency" nillable="true" type="s0:UrgencyType"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Notes" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="1" name="Summary" nillable="false" type="xsd:string"/>
+     <xsd:element default="New" maxOccurs="1" minOccurs="1" name="Status" nillable="false" type="s0:StatusType"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Status_Reason" nillable="false" type="s0:Status_ReasonType"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="ReportedSource" nillable="true" type="s0:ReportedSourceType"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="FirstName" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="LastName" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="AssignedCompany" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="AssignedOrganization" nillable="false" type="xsd:string"/>
+     <xsd:element maxOccurs="1" minOccurs="0" name="Assigned_Group" nillable="false" type="xsd:string"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="ServiceTypeType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="User Service Restoration"/>
+     <xsd:enumeration value="User Service Request"/>
+     <xsd:enumeration value="Infrastructure Restoration"/>
+     <xsd:enumeration value="Infrastructure Event"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ImpactType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="1-Extensive/Widespread"/>
+     <xsd:enumeration value="2-Significant/Large"/>
+     <xsd:enumeration value="3-Moderate/Limited"/>
+     <xsd:enumeration value="4-Minor/Localized"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="UrgencyType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="1-Critical"/>
+     <xsd:enumeration value="2-High"/>
+     <xsd:enumeration value="3-Medium"/>
+     <xsd:enumeration value="4-Low"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="StatusType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="New"/>
+     <xsd:enumeration value="Assigned"/>
+     <xsd:enumeration value="In Progress"/>
+     <xsd:enumeration value="Pending"/>
+     <xsd:enumeration value="Resolved"/>
+     <xsd:enumeration value="Closed"/>
+     <xsd:enumeration value="Cancelled"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="Status_ReasonType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="Infrastructure Change Created"/>
+     <xsd:enumeration value="Local Site Action Required"/>
+     <xsd:enumeration value="Purchase Order Approval"/>
+     <xsd:enumeration value="Registration Approval"/>
+     <xsd:enumeration value="Supplier Delivery"/>
+     <xsd:enumeration value="Support Contact Hold"/>
+     <xsd:enumeration value="Third Party Vendor Action Reqd"/>
+     <xsd:enumeration value="Client Action Required"/>
+     <xsd:enumeration value="Infrastructure Change"/>
+     <xsd:enumeration value="Request"/>
+     <xsd:enumeration value="Future Enhancement"/>
+     <xsd:enumeration value="Pending Original Incident"/>
+     <xsd:enumeration value="Client Hold"/>
+     <xsd:enumeration value="Monitoring Incident"/>
+     <xsd:enumeration value="Customer Follow-Up Required"/>
+     <xsd:enumeration value="Temporary Corrective Action"/>
+     <xsd:enumeration value="No Further Action Required"/>
+     <xsd:enumeration value="Resolved by Original Incident"/>
+     <xsd:enumeration value="Automated Resolution Reported"/>
+     <xsd:enumeration value="No longer a Causal CI"/>
+     <xsd:enumeration value="Pending Causal Incident Resolution"/>
+     <xsd:enumeration value="Resolved by Causal Incident"/>
+     <xsd:enumeration value="Abierto"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ReportedSourceType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="Direct Input"/>
+     <xsd:enumeration value="Email"/>
+     <xsd:enumeration value="External Escalation"/>
+     <xsd:enumeration value="Fax"/>
+     <xsd:enumeration value="Self Service"/>
+     <xsd:enumeration value="Systems Management"/>
+     <xsd:enumeration value="Phone"/>
+     <xsd:enumeration value="Voice Mail"/>
+     <xsd:enumeration value="Walk In"/>
+     <xsd:enumeration value="Web"/>
+     <xsd:enumeration value="Other"/>
+     <xsd:enumeration value="BMC Impact Manager Event"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:element name="HelpDesk_Submit_ServiceResponse" type="s0:CreateOutputMap"/>
+   <xsd:complexType name="CreateOutputMap">
+    <xsd:sequence>
+     <xsd:element maxOccurs="1" minOccurs="1" name="Incident_Number" nillable="false" type="xsd:string"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="AuthenticationInfo" type="s0:AuthenticationInfo"/>
+   <xsd:complexType name="AuthenticationInfo">
+    <xsd:sequence>
+     <xsd:element name="userName" type="xsd:string"/>
+     <xsd:element name="password" type="xsd:string"/>
+     <xsd:element minOccurs="0" name="authentication" type="xsd:string"/>
+     <xsd:element minOccurs="0" name="locale" type="xsd:string"/>
+     <xsd:element minOccurs="0" name="timeZone" type="xsd:string"/>
+    </xsd:sequence>
+   </xsd:complexType>
+  </xsd:schema>
+ </wsdl:types>
+
+   <wsdl:message name="ARAuthenticate">
+
+      <wsdl:part element="s0:AuthenticationInfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="HelpDesk_Submit_ServiceSoapOut">
+
+      <wsdl:part element="s0:HelpDesk_Submit_ServiceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="HelpDesk_Submit_ServiceSoapIn">
+
+      <wsdl:part element="s0:HelpDesk_Submit_Service" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="HPD_IncidentInterface_Create_WSPortTypePortType">
+
+      <wsdl:operation name="HelpDesk_Submit_Service">
+
+         <wsdl:input message="s0:HelpDesk_Submit_ServiceSoapIn">
+
+       </wsdl:input>
+
+         <wsdl:output message="s0:HelpDesk_Submit_ServiceSoapOut">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="HPD_IncidentInterface_Create_WSPortTypeSoapBinding" type="s0:HPD_IncidentInterface_Create_WSPortTypePortType">
+
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="HelpDesk_Submit_Service">
+
+         <soap:operation soapAction="urn:HPD_IncidentInterface_Create_WSMonitoreo/HelpDesk_Submit_Service" style="document"/>
+
+         <wsdl:input>
+
+            <soap:header message="s0:ARAuthenticate" part="parameters" use="literal">
+
+            </soap:header>
+
+            <soap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output>
+
+            <soap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="HPD_IncidentInterface_Create_WSMonitoreoService">
+
+  <wsdl:documentation>
+HelpDesk_Submit_Service Create  </wsdl:documentation>
+
+      <wsdl:port binding="s0:HPD_IncidentInterface_Create_WSPortTypeSoapBinding" name="HPD_IncidentInterface_Create_WSPortTypeSoap">
+
+         <soap:address location="https://itremedy.mx.att.com/arsys/services/ARService?server=appitremedy&amp;webService=HPD_IncidentInterface_Create_WSMonitoreo"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
+
