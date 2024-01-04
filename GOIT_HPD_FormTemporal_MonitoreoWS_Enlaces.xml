@@ -163,7 +163,7 @@
     </wsdl:binding>
     <wsdl:service name="GOIT:HPD_FormTemporal_MonitoreoWS_EnlacesService">
         <wsdl:port binding="s0:CreacionSoapBinding" name="CreacionSoap">
-            <soap:address location="https://itremedy.mx.att.com/arsys/services/ARService?server=appitremedy&amp;webService=HPD_IncidentInterface_Create_WSMonitoreo"/>
+            <soap:address location="https://servicedesk.mx.att.com/middleware/mdw/arsys/services/ARService?server=appitremedy&amp;webService=GOIT:HPD_FormTemporal_MonitoreoWS_Enlaces"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
