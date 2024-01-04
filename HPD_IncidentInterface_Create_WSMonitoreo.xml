@@ -194,7 +194,7 @@ HelpDesk_Submit_Service Create  </wsdl:documentation>
 
       <wsdl:port binding="s0:HPD_IncidentInterface_Create_WSPortTypeSoapBinding" name="HPD_IncidentInterface_Create_WSPortTypeSoap">
 
-         <soap:address location="https://itremedy.mx.att.com/arsys/services/ARService?server=appitremedy&webService=HPD_IncidentInterface_Create_WSMonitoreo"/>
+         <soap:address location="https://itremedy.mx.att.com/arsys/services/ARService?server=appitremedy&amp;webService=HPD_IncidentInterface_Create_WSMonitoreo"/>
 
       </wsdl:port>
 
